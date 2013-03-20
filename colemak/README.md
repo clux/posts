@@ -1,4 +1,4 @@
-## Keyboad Layout
+# Colemak
 ![colemak finger layout](./Colemak_fingers-600.png)
 
 QWERTY sucks. You always learn it wrong, and it's optimized for not jamming your typewriters whilst typing English. Oh, I'm sorry, is that *not* how you type?
