@@ -1,4 +1,3 @@
-# Colemak
 ![colemak finger layout](./Colemak_fingers-600.png)
 
 QWERTY sucks. You always learn it wrong, and it's optimized for not jamming your typewriters whilst typing English. Oh, I'm sorry, is that *not* how you type?
@@ -19,6 +18,5 @@ Colemak Progress:
 - ~2 months: 80 wpm
 - ~6 months: 90 wpm
 - ~2 years: 100 wpm
-
 
 Records: 102wpm on the hi-games 2 minute typing test, 120wpm on typeracer.
