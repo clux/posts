@@ -31,7 +31,7 @@ This is expanded uniquely using the three defined properties and the smaller bra
 
 The system comes from decomposing the match number $i$ as $i=2^k + l$ where $k = \lfloor \log_2{i} \rfloor$. If we write the even seed as powers of two then they display a binary counting system going up between match numbers that are powers of two. In fact, it's the binary representation of $i-2l$ that is required, so let $c_j = bit_j (i-2l)$. We can then verify the final function (sending match number to the even seed in that match).
 
-$$2^k + l \mapsto \begin{cases} 2^{n-k}, \mbox{if }l=0 \newline 2^{n-k-1}+2^n \sum_{j=1} 2^{-j}c_j, \mbox{if }0 < l < 2^k.\end{cases}$$
+$$2^k + l \mapsto \begin{cases} 2^{n-k},& \text{if $l=0$} \newline 2^{n-k-1}+2^n \sum_{j=1} 2^{-j}c_j,& \text{if $0 < l < 2^k$.}\end{cases}$$
 
 
 Pretty cool for something as seemingly as simple as a tournament system.
