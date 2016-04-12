@@ -1,4 +1,6 @@
-As a small effort in self-gratification after finishing uni, I looking into getting tournament scheduling possibilities into old clux.org. This turned out to take a little more mental effort than I expected. In particular, the problem of how to order seeds into the tournament bracket seemed almost a bit random. But after some hours on the couch with pen and paper and ivc to talk to, we found a sensible solution.
+A particularly hard problem with tournament scheduling.
+
+This turned out to take a little more mental effort than I expected. The problem of how to order seeds into the tournament brackets seemed almost a bit random. But after some hours on the couch with pen and paper and ivc to talk to, we found a sensible solution.
 
 
 ## Intro
@@ -51,3 +53,22 @@ def even_seed_from_match_nr(i, n): # match_nr, log2(participants)
 ```
 
 One of the crazier things I have written in python. And as such, it needs a few notes, especially on the non-zero r (denoted as l earlier in doc) case: `nr = binary(i-2*r)` reversed (remove leading 0b part of string first). Then shift `n-k` and add in leading term. However, nr should be k bits, so we need to shift more if not (when reversing leading become trailing) so must shift extra `len(nr)-k` bits. Without the compensation for extra zeroes the return wouldve looked like this: `return int(bin(i-2*r)[2:][::-1],2) << n-k | 1 << n-k-1`. Insane.
+
+## Note from years later
+This provided a part of my open source [duel tournament](https://github.com/clux/duel) library.
+
+The code that deals with this particular bit now looks like this:
+
+```js
+var evenSeed = function (i, p) {
+  var k = Math.floor(Math.log(i) / Math.log(2))
+    , r = i - Math.pow(2, k);
+  if (r === 0) {
+    return Math.pow(2, p - k);
+  }
+  var nr = (i - 2*r).toString(2).split('').reverse().join('');
+  return (parseInt(nr, 2) << p - nr.length) + Math.pow(2, p - k - 1);
+};
+```
+
+Still and magical and confusing to everyone as ever.
